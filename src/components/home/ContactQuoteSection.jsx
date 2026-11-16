@@ -28,8 +28,8 @@ export const ContactQuoteSection = ({ onToast }) => {
     setSubmitting(true);
 
     try {
-      const recipient = companyData.contacts.emails[0]?.display || 'sales@aon-engg.in';
-      const endpoint = `https://formsubmit.co/ajax/${recipient}`;
+      const formTarget = companyData.contacts.formSubmitToken || companyData.contacts.emails[0]?.display || 'sales@aon-engg.in';
+      const endpoint = `https://formsubmit.co/ajax/${formTarget}`;
 
       const response = await fetch(endpoint, {
         method: 'POST',
@@ -132,7 +132,11 @@ export const ContactQuoteSection = ({ onToast }) => {
         </div>
 
         <div className="fm">
-          <form onSubmit={handleSubmit}>
+          <form
+            action={`https://formsubmit.co/${companyData.contacts.formSubmitToken || 'e09efab6b4cf9230feaf17a39eb5e4e6'}`}
+            method="POST"
+            onSubmit={handleSubmit}
+          >
             <div className="r2">
               <label>
                 Name
