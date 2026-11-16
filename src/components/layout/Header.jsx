@@ -78,7 +78,7 @@ export const Header = () => {
           className={mobileMenuOpen ? 'open' : ''}
           aria-label="Main navigation"
           onClick={(e) => {
-            if (e.target.tagName === 'A') {
+            if (e.target.closest('a')) {
               closeMobileMenu();
             }
           }}
@@ -123,10 +123,11 @@ export const Header = () => {
             href={companyData.credentials.companyProfileDriveUrl}
             target="_blank"
             rel="noopener noreferrer"
-            title="Download verified AON Company Profile from Google Drive"
-            style={{ display: 'inline-flex', alignItems: 'center', gap: '4px' }}
+            className="nav-profile-link"
+            title="Download verified AON Company Profile (PDF)"
           >
-            Profile <ExternalLinkIcon className="icon-xs" />
+            <span>Profile</span>
+            <ExternalLinkIcon size={13} className="icon-xs" />
           </a>
           <a className="btn" href="#contact">
             Request a quote

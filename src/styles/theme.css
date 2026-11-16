@@ -268,6 +268,53 @@ nav.main-nav .nav-cta:hover {
   color: #ffffff !important;
 }
 
+nav a.nav-profile-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+nav a.nav-profile-link .icon-xs {
+  opacity: 0.7;
+  stroke: currentColor;
+  fill: none;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+nav a.nav-profile-link:hover .icon-xs {
+  opacity: 1;
+  transform: translate(1px, -1px);
+}
+
+/* Inline Icon Utilities */
+.icon-xs {
+  width: 14px;
+  height: 14px;
+  min-width: 14px;
+  min-height: 14px;
+  max-width: 14px;
+  max-height: 14px;
+  display: inline-block;
+  vertical-align: middle;
+  stroke: currentColor;
+  fill: none;
+  flex-shrink: 0;
+}
+
+.icon-sm {
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+  max-width: 18px;
+  max-height: 18px;
+  display: inline-block;
+  vertical-align: middle;
+  stroke: currentColor;
+  fill: none;
+  flex-shrink: 0;
+}
+
 .nav-dropdown {
   position: relative;
 }
@@ -1244,6 +1291,17 @@ footer .lg {
   nav.open,
   nav.main-nav.open {
     display: flex;
+  }
+  nav a,
+  nav.main-nav a,
+  nav.main-nav a.nav-item {
+    font-size: 1rem;
+    padding: 11px 14px;
+  }
+  nav a.nav-profile-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
   }
   nav .btn,
   nav.main-nav .btn,

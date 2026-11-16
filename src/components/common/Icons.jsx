@@ -110,22 +110,44 @@ export const MapPinIcon = ({ className = '' }) => (
   </svg>
 );
 
-export const CloseIcon = ({ className = '' }) => (
-  <svg viewBox="0 0 24 24" className={className} aria-hidden="true">
+export const CloseIcon = ({ className = '', size = 18 }) => (
+  <svg
+    viewBox="0 0 24 24"
+    width={size}
+    height={size}
+    className={className}
+    aria-hidden="true"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
     <line x1="18" y1="6" x2="6" y2="18" />
     <line x1="6" y1="6" x2="18" y2="18" />
   </svg>
 );
 
-export const ExternalLinkIcon = ({ className = '' }) => (
-  <svg viewBox="0 0 24 24" className={className} aria-hidden="true">
+export const ExternalLinkIcon = ({ className = '', size = 14 }) => (
+  <svg
+    viewBox="0 0 24 24"
+    width={size}
+    height={size}
+    className={className}
+    aria-hidden="true"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
     <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
     <polyline points="15 3 21 3 21 9" />
     <line x1="10" y1="14" x2="21" y2="3" />
   </svg>
 );
 
-export const ChevronIcon = ({ className = '', direction = 'right' }) => {
+export const ChevronIcon = ({ className = '', size = 16, direction = 'right' }) => {
   const rotate = {
     down: 'rotate(90deg)',
     up: 'rotate(-90deg)',
@@ -136,9 +158,16 @@ export const ChevronIcon = ({ className = '', direction = 'right' }) => {
   return (
     <svg
       viewBox="0 0 24 24"
+      width={size}
+      height={size}
       className={className}
       style={{ transform: rotate, transition: 'transform .15s ease' }}
       aria-hidden="true"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     >
       <polyline points="9 18 15 12 9 6" />
     </svg>
