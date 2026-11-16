@@ -27,12 +27,16 @@ export const ContactQuoteSection = ({ onToast }) => {
 
     setSubmitting(true);
 
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 15000);
+
     try {
       const formTarget = companyData.contacts.formSubmitToken || companyData.contacts.emails[0]?.display || 'sales@aon-engg.in';
       const endpoint = `https://formsubmit.co/ajax/${formTarget}`;
 
       const response = await fetch(endpoint, {
         method: 'POST',
+        signal: controller.signal,
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json',
@@ -49,6 +53,8 @@ export const ContactQuoteSection = ({ onToast }) => {
           _captcha: 'false',
         }),
       });
+
+      clearTimeout(timeoutId);
 
       const data = await response.json();
 
@@ -69,11 +75,19 @@ export const ContactQuoteSection = ({ onToast }) => {
         throw new Error(data.message || 'Submission failed');
       }
     } catch (error) {
+      clearTimeout(timeoutId);
       console.error('FormSubmit Error:', error);
-      onToast(
-        'Unable to send enquiry automatically. Please email us directly at sales@aon-engg.in or call +91 99581 88070.',
-        'error'
-      );
+      if (error.name === 'AbortError') {
+        onToast(
+          'The submission timed out. Please check your internet connection or email us directly at sales@aon-engg.in.',
+          'error'
+        );
+      } else {
+        onToast(
+          'Unable to send enquiry automatically. Please email us directly at sales@aon-engg.in or call +91 99581 88070.',
+          'error'
+        );
+      }
     } finally {
       setSubmitting(false);
     }
@@ -207,8 +221,39 @@ export const ContactQuoteSection = ({ onToast }) => {
               className="btn"
               type="submit"
               disabled={submitting}
-              style={{ justifySelf: 'start', opacity: submitting ? 0.7 : 1 }}
+              style={{
+                justifySelf: 'start',
+                opacity: submitting ? 0.8 : 1,
+                cursor: submitting ? 'wait' : 'pointer',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+              }}
             >
+              {submitting && (
+                <svg
+                  className="spinner"
+                  viewBox="0 0 24 24"
+                  width="16"
+                  height="16"
+                  aria-hidden="true"
+                  style={{ animation: 'spin 0.8s linear infinite' }}
+                >
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    strokeWidth="3"
+                    fill="none"
+                    opacity="0.25"
+                  />
+                  <path
+                    fill="currentColor"
+                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"
+                  />
+                </svg>
+              )}
               {submitting ? 'Sending enquiry...' : 'Send enquiry'}
             </button>
           </form>
