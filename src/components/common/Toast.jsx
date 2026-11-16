@@ -13,19 +13,23 @@ export const Toast = ({ message, type = 'success', onClose, duration = 6000 }) =
   if (!message) return null;
 
   return (
-    <div className={`toast-container ${type}`} role="status" aria-live="polite">
-      <div className="toast-icon">
-        <CheckIcon />
+    <div className="toast-container" role="status" aria-live="polite">
+      <div className={`toast ${type}`}>
+        <div className="toast-icon">
+          <CheckIcon />
+        </div>
+        <div className="toast-body">
+          <p>{message}</p>
+        </div>
+        <button
+          type="button"
+          className="toast-close"
+          onClick={onClose}
+          aria-label="Dismiss message"
+        >
+          <CloseIcon size={16} />
+        </button>
       </div>
-      <div className="toast-message">{message}</div>
-      <button
-        type="button"
-        className="toast-close"
-        onClick={onClose}
-        aria-label="Dismiss message"
-      >
-        <CloseIcon />
-      </button>
     </div>
   );
 };

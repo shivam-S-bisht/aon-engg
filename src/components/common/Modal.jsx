@@ -45,11 +45,11 @@ export const Modal = ({ isOpen, onClose, title, subtitle, children, maxWidth = '
           </div>
           <button
             type="button"
-            className="modal-close"
+            className="modal-close modal-close-btn"
             onClick={onClose}
             aria-label="Close dialog"
           >
-            <CloseIcon />
+            <CloseIcon size={18} />
           </button>
         </div>
         <div className="modal-body">{children}</div>

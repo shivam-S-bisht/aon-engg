@@ -34,12 +34,12 @@ export const ServicesSection = ({ onSelectService }) => {
 
                 <button
                   type="button"
-                  className="card-spec-btn"
+                  className="card-spec-btn view-specs-btn"
                   onClick={() => onSelectService(service)}
                   aria-label={`View technical engineering standards for ${service.title}`}
                 >
                   <span>Technical Standards &amp; Codes</span>
-                  <ChevronIcon direction="right" />
+                  <ChevronIcon direction="right" size={14} />
                 </button>
               </article>
             );
