@@ -4,7 +4,7 @@ export const Hero = () => {
   return (
     <div className="hero">
       <div className="t">
-        <h1>Mechanical, electrical, plumbing and fire protection, delivered as one contract.</h1>
+        <h1>Mechanical, electrical, plumbing and fire protection, delivered as one turnkey solution.</h1>
         <p>
           We design, install and service electro-mechanical systems, and manufacture HVAC and fire safety
           equipment, for industrial, commercial and residential clients across India.

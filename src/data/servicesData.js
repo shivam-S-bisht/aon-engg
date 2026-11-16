@@ -12,7 +12,7 @@ export const servicesData = [
     highlights: [
       "Outdoor and indoor unit installation",
       "Ducting, piping and insulation",
-      "Comprehensive maintenance & AMC contracts",
+      "Comprehensive maintenance & AMC services",
     ],
     technicalDetails: {
       overview:

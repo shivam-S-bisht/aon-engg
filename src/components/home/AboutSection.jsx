@@ -29,7 +29,7 @@ export const AboutSection = () => {
                 fontWeight: 600,
               }}
             >
-              Turnkey MEP Contracting
+              Turnkey MEP Solutions
             </span>
             <span
               style={{

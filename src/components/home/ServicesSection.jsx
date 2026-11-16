@@ -10,7 +10,7 @@ export const ServicesSection = ({ onSelectService }) => {
           <span className="sec-tag">Services</span>
           <h2>Electro-Mechanical Engineering Capabilities</h2>
           <p className="mu">
-            Each service can be contracted separately or combined into a single turnkey MEP package under one coordinated engineering team.
+            Each service can be commissioned separately or combined into a single turnkey MEP package under one coordinated engineering team.
           </p>
         </div>
 
