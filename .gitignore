@@ -27,6 +27,7 @@ jspm_packages/
 dist/
 dist-ssr/
 build/
+.vite/
 *.local
 
 # Environment variables
