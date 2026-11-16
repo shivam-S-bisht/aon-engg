@@ -18,7 +18,7 @@ export const ContactQuoteSection = ({ onToast }) => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.msg) {
       onToast('Please fill in all required fields (Name, Email, Project Details).', 'error');
@@ -27,21 +27,56 @@ export const ContactQuoteSection = ({ onToast }) => {
 
     setSubmitting(true);
 
-    setTimeout(() => {
-      setSubmitting(false);
-      onToast(
-        `Thank you, ${formData.name}! Your enquiry for ${formData.service} has been received. Our technical team will review and contact you shortly.`,
-        'success'
-      );
-      setFormData({
-        name: '',
-        company: '',
-        email: '',
-        phone: '',
-        service: 'HVAC',
-        msg: '',
+    try {
+      const recipient = companyData.contacts.emails[0]?.display || 'sales@aon-engg.com';
+      const endpoint = `https://formsubmit.co/ajax/${recipient}`;
+
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify({
+          Name: formData.name,
+          Company: formData.company || 'Not specified',
+          Email: formData.email,
+          Phone: formData.phone || 'Not specified',
+          Service: formData.service,
+          'Project Details': formData.msg,
+          _subject: `New MEP Project Enquiry: ${formData.service} - ${formData.name}`,
+          _template: 'table',
+          _captcha: 'false',
+        }),
       });
-    }, 600);
+
+      const data = await response.json();
+
+      if (response.ok && (data.success === 'true' || data.success === true || response.status === 200)) {
+        onToast(
+          `Thank you, ${formData.name}! Your enquiry for ${formData.service} has been sent successfully. Our engineering team will review it and get in touch with you shortly.`,
+          'success'
+        );
+        setFormData({
+          name: '',
+          company: '',
+          email: '',
+          phone: '',
+          service: 'HVAC',
+          msg: '',
+        });
+      } else {
+        throw new Error(data.message || 'Submission failed');
+      }
+    } catch (error) {
+      console.error('FormSubmit Error:', error);
+      onToast(
+        'Unable to send enquiry automatically. Please email us directly at sales@aon-engg.com or call +91 99581 88070.',
+        'error'
+      );
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const officeAddress = companyData.contacts.addresses.correspondence.formatted;
