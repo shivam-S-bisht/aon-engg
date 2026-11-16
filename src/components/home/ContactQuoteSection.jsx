@@ -31,8 +31,7 @@ export const ContactQuoteSection = ({ onToast }) => {
     const timeoutId = setTimeout(() => controller.abort(), 15000);
 
     try {
-      const formTarget = companyData.contacts.formSubmitToken || companyData.contacts.emails[0]?.display || 'sales@aon-engg.in';
-      const endpoint = `https://formsubmit.co/ajax/${formTarget}`;
+      const endpoint = 'https://formsubmit.co/ajax/e09efab6b4cf9230feaf17a39eb5e4e6';
 
       const response = await fetch(endpoint, {
         method: 'POST',
@@ -149,7 +148,7 @@ export const ContactQuoteSection = ({ onToast }) => {
 
         <div className="fm">
           <form
-            action={`https://formsubmit.co/${companyData.contacts.formSubmitToken || 'e09efab6b4cf9230feaf17a39eb5e4e6'}`}
+            action="https://formsubmit.co/e09efab6b4cf9230feaf17a39eb5e4e6"
             method="POST"
             onSubmit={handleSubmit}
           >
