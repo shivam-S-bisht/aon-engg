@@ -19,8 +19,8 @@ export const App = () => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [toast, setToast] = useState(null);
 
-  const handleShowToast = (message, type = 'success') => {
-    setToast({ message, type });
+  const handleShowToast = (message, type = 'success', duration = 8000) => {
+    setToast({ message, type, duration });
   };
 
   const handleCloseToast = () => {
@@ -207,6 +207,7 @@ export const App = () => {
         <Toast
           message={toast.message}
           type={toast.type}
+          duration={toast.duration || 8000}
           onClose={handleCloseToast}
         />
       )}

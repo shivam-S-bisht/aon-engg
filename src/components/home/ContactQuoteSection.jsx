@@ -58,9 +58,14 @@ export const ContactQuoteSection = ({ onToast }) => {
 
       const data = await response.json();
 
+      const primaryPhone =
+        companyData.contacts.phones.find((p) => p.primary)?.display ||
+        companyData.contacts.phones[0]?.display ||
+        '+91 99581 88070';
+
       if (response.ok && (data.success === 'true' || data.success === true || response.status === 200)) {
         onToast(
-          `Thank you, ${formData.name}! Your enquiry for ${formData.service} has been sent successfully. Our engineering team will review it and get in touch with you shortly.`,
+          `Thank you, ${formData.name}! Your enquiry for ${formData.service} has been sent successfully. Our engineering team will review it and get in touch with you shortly. If you don't hear from us in 1 day, please call us directly at ${primaryPhone}.`,
           'success'
         );
         setFormData({

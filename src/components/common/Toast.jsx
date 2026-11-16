@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { CheckIcon, CloseIcon } from './Icons';
 
-export const Toast = ({ message, type = 'success', onClose, duration = 6000 }) => {
+export const Toast = ({ message, type = 'success', onClose, duration = 8000 }) => {
   useEffect(() => {
     if (!message) return;
     const timer = setTimeout(() => {
