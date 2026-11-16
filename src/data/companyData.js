@@ -8,9 +8,9 @@ export const companyData = {
   shortName: "AON Engineers",
   tagline: "One stop for turnkey M.E.P. solutions",
   description:
-    "An engineering contractor built around dependable delivery, providing electro-mechanical services to industrial and commercial customers from design and installation through to after-sales support.",
+    "An engineering firm built around dependable delivery, providing electro-mechanical services to industrial and commercial customers from design and installation through to after-sales support.",
   founders: [
-    { name: "Rakesh Singh Bisht", role: "Co-Founder & Director" },
+    { name: "Rakesh Singh Bist", role: "Co-Founder & Director" },
     { name: "Shareef Siddhique", role: "Co-Founder & Director" },
   ],
   contacts: {
@@ -57,7 +57,7 @@ export const companyData = {
       "https://drive.google.com/open?id=0B0Jgqa1qT4RkdUJTbnV3WjNvUWZuUF9xN2hsc1E3LXlYS1JZ",
     dnbSealUrl: "https://dunsregistered.dnb.com/SealAuthentication.aspx?Cid=1",
     dunsUrl: "https://dunsregistered.dnb.com/SealAuthentication.aspx?Cid=1",
-    cinGstNotice: "CIN: U74140UP2016PTC085188 | GST Registered Contractor",
+    cinGstNotice: "CIN: U74140UP2016PTC085188 | GST Registered Enterprise",
   },
   social: [
     { name: "Gmail", url: "mailto:sales@aon-engg.com" },

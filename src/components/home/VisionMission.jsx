@@ -27,7 +27,7 @@ export const VisionMission = () => {
           <span className="sec-tag">Corporate Philosophy</span>
           <h2>Vision</h2>
           <p>
-            The preferred Mechanical, Electrical, Plumbing, and Fire Fighting contractor as well as Manufacturers of HVAC &amp; Fire safety equipment and related products in India.
+            The preferred Mechanical, Electrical, Plumbing, and Fire Fighting solutions provider as well as Manufacturers of HVAC &amp; Fire safety equipment and related products in India.
           </p>
         </div>
         <div className="c">

@@ -122,7 +122,7 @@ export const WorkGallery = ({ onSelectImage }) => {
               </div>
               <span className="cred-tag">Govt. of India &middot; MCA</span>
               <h3>Certificate of Incorporation</h3>
-              <p>Registered private limited engineering contractor under the Companies Act, 2013 (CIN: U74140UP2016PTC085188).</p>
+              <p>Registered private limited engineering enterprise under the Companies Act, 2013 (CIN: U74140UP2016PTC085188).</p>
               <span className="cred-btn-link">
                 View Certificate <ExternalLinkIcon className="icon-xs" />
               </span>

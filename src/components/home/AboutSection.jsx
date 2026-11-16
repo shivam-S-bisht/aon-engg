@@ -7,7 +7,7 @@ export const AboutSection = () => {
       <div className="w about">
         <div>
           <span className="sec-tag">About AON</span>
-          <h2>An engineering contractor built around dependable delivery</h2>
+          <h2>An engineering firm built around dependable delivery</h2>
           <p className="mu">
             {companyData.name} provides end-to-end electro-mechanical services to industrial,
             commercial, and infrastructure customers—from concept design and statutory compliance through to

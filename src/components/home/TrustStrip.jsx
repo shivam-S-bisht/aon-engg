@@ -9,7 +9,7 @@ export const TrustStrip = () => {
           <li>
             <ToolIcon />
             <div>
-              <b>MEP contractors</b>
+              <b>MEP Engineers</b>
               <span>Mechanical, electrical, plumbing, fire fighting</span>
             </div>
           </li>

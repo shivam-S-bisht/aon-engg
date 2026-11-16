@@ -25,7 +25,7 @@ export const servicesData = [
         "National Building Code (NBC) 2005",
         "Local Building By-laws & Regulations",
         "Energy Conservation Act 2001 (EC Act)",
-        "SMACNA (Sheet Metal and Air Conditioning Contractors' National Association)",
+        "SMACNA Standards (Sheet Metal & Air Conditioning National Association)",
         "DW-144 Specification for Sheet Metal Ductwork",
       ],
       scope: [
