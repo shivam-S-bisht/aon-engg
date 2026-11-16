@@ -20,8 +20,8 @@ export const companyData = {
       { display: "0120-4241185", link: "tel:01204241185", primary: false },
     ],
     emails: [
-      { display: "sales@aon-engg.com", link: "mailto:sales@aon-engg.com" },
-      { display: "info@aon-engg.com", link: "mailto:info@aon-engg.com" },
+      { display: "sales@aon-engg.in", link: "mailto:sales@aon-engg.in" },
+      { display: "info@aon-engg.in", link: "mailto:info@aon-engg.in" },
     ],
     addresses: {
       correspondence: {
@@ -60,7 +60,7 @@ export const companyData = {
     cinGstNotice: "CIN: U74140UP2016PTC085188 | GST Registered Enterprise",
   },
   social: [
-    { name: "Gmail", url: "mailto:sales@aon-engg.com" },
+    { name: "Gmail", url: "mailto:sales@aon-engg.in" },
     { name: "LinkedIn", url: "https://www.linkedin.com/company/aon-engineers-and-consultants" },
     { name: "Facebook", url: "https://facebook.com/aonengineers" },
   ],

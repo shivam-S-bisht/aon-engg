@@ -23,5 +23,6 @@ export const careersData = {
     "PHE & Firefighting Project Coordinator",
     "AutoCAD & BIM MEP Draughtsperson",
   ],
-  applyEmail: "sales@aon-engg.com",
+  applyEmail: "sales@aon-engg.in",
+  cvEmail: "sales@aon-engg.in",
 };

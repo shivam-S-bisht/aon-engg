@@ -28,7 +28,7 @@ export const ContactQuoteSection = ({ onToast }) => {
     setSubmitting(true);
 
     try {
-      const recipient = companyData.contacts.emails[0]?.display || 'sales@aon-engg.com';
+      const recipient = companyData.contacts.emails[0]?.display || 'sales@aon-engg.in';
       const endpoint = `https://formsubmit.co/ajax/${recipient}`;
 
       const response = await fetch(endpoint, {
@@ -71,7 +71,7 @@ export const ContactQuoteSection = ({ onToast }) => {
     } catch (error) {
       console.error('FormSubmit Error:', error);
       onToast(
-        'Unable to send enquiry automatically. Please email us directly at sales@aon-engg.com or call +91 99581 88070.',
+        'Unable to send enquiry automatically. Please email us directly at sales@aon-engg.in or call +91 99581 88070.',
         'error'
       );
     } finally {
